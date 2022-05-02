@@ -13,7 +13,7 @@ import java.io.IOException;
 //  Następnie wygeneruj tabliczkę mnożenia o podanej wysokości i szerokości i wyświetl ją w przeglądarce.
 
 // PRZYKŁADOWE ODWOŁANIA -> /get3?width=3&height=3
-@WebServlet(name = "get3", value = "/get3")
+@WebServlet(name = "get3", value = "/get3") // name jest default Pusty -> value jest default pusta tablica
 public class Get3 extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -23,6 +23,7 @@ public class Get3 extends HttpServlet {
         String heightStr = request.getParameter("height");
         int width;
         int height;
+
         if (widthStr == null ){
             widthStr = "5";
         }
